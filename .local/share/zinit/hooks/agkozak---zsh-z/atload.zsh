@@ -1,4 +1,4 @@
-z() {
+function z() {
     if (( ! ${+functions[zshz]} )) {
         print "Error: zshz not found." >&2
         return 1
