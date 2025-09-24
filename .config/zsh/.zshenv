@@ -4,9 +4,13 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_BIN_HOME=$HOME/.local/bin
 
+export GHCUP_USE_XDG_DIRS=true
+
+export GHC_ENVIRONMENT=$XDG_DATA_HOME/ghc/env/default
+
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 
-export GHCUP_USE_XDG_DIRS=true
+export CABAL_DIR=$XDG_DATA_HOME/cabal
 
 export DOTNET_CLI_HOME=$XDG_DATA_HOME/dotnet
 
