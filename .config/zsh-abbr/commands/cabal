@@ -1,0 +1,9 @@
+abbr 'cbl'='cabal'
+
+abbr 'cabal up'='cabal update'
+
+abbr 'cabal in'='cabal install --lib --package-env=$GHC_ENVIRONMENT'
+
+abbr 'cabal ls'='cabal list --installed'
+
+abbr 'cabal si'='cabal info'
