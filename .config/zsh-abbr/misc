@@ -9,7 +9,7 @@ abbr 'mp'='mkdir -p'
 
 abbr 'zi'='zinit'
 abbr 'zu'='zinit update -q%'
-abbr 'zinit up'='zinit update -a -q%'
+abbr 'zinit up'='zinit update -q%'
 abbr 'zinit tm'='zinit times -a%'
 abbr 'zinit rp'='zinit report'
 
@@ -17,4 +17,6 @@ abbr 'ez'='exec zsh%'
 
 abbr 'al'='abbr load%'
 
-abbr 'hf'='hyperfine -w3 -r20 '\''%'\'
+abbr 'hf'="hyperfine -w3 -r20 '%'"
+
+abbr 'cc'='clear && cat'

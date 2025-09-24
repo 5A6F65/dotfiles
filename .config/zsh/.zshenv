@@ -17,6 +17,8 @@ export NODE_OPTIONS='--disable-warning=ExperimentalWarning'
 
 export DELTA_FEATURES="diff-so-fancy"
 
+path=(/snap/bin $path)
+
 path=(/usr/local/texlive/2024/bin/x86_64-linux $path)
 manpath=(/usr/local/texlive/2024/texmf-dist/doc/man $manpath)
 infopath=(/usr/local/texlive/2024/texmf-dist/doc/info $infopath)
@@ -31,7 +33,5 @@ export GOPATH=$HOME/go
 path=($GOPATH/bin $path)
 
 path=($HOME/.{ghcup,cabal,cargo}/bin $path)
-
-path=(/snap/bin $path)
 
 path=($HOME/.local/bin $path)

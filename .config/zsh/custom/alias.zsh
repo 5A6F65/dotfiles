@@ -2,14 +2,19 @@ alias ls='eza --sort=type --time-style=long-iso --color-scale=age'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ll -a'
-alias lg='ll --git'
-alias lga='lla --git'
-alias lt='ll --total-size'
-alias lta='lla --total-size'
+
+alias lt='ll -T'
+alias lta='lla -T'
+
 alias lz='ll -Z'
 alias lza='lla -Z'
 
+alias lu='ll --total-size'
+alias lua='lla --total-size'
+
 alias tree='eza --tree'
+
+alias fd='fdfind'
 
 alias genact='clear && genact'
 

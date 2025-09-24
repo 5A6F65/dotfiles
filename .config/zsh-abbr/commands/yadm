@@ -1,4 +1,5 @@
 abbr 'y'='yadm'
+abbr 'yu'='yadm pull'
 
 abbr 'yadm ad'='yadm add'
 abbr 'yadm au'='yadm add -u%'
@@ -7,6 +8,11 @@ abbr 'yadm ap'='yadm add -p%'
 abbr 'yadm cm'='yadm commit'
 abbr 'yadm cv'='yadm commit -v%'
 abbr 'yadm ca'='yadm commit --amend -v%'
+abbr 'yadm commit v'='yadm commit -v%'
+abbr 'yadm commit m'='yadm commit -m "%"'
+abbr 'yadm commit f'='yadm commit --fixup=%'
+abbr 'yadm commit a'='yadm commit --amend -v%'
+abbr 'yadm commit r'='yadm commit --amend --no-edit%'
 
 abbr 'yadm cl'='yadm clone'
 
@@ -19,6 +25,8 @@ abbr 'yadm dt'='yadm difftool%'
 abbr 'yadm fe'='yadm fetch'
 
 abbr 'yadm ln'='yadm lo -n 10%'
+
+abbr 'yadm ls'='yadm ls-files'
 
 abbr 'yadm mg'='yadm merge --no-ff'
 abbr 'yadm mf'='yadm merge --ff-only'

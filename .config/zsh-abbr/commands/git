@@ -1,4 +1,5 @@
 abbr 'g'='git'
+# abbr 'gu'='git pull'
 
 abbr 'git ad'='git add'
 abbr 'git aa'='git add -A%'
@@ -31,6 +32,8 @@ abbr 'git dt'='git difftool%'
 abbr 'git fe'='git fetch'
 
 abbr 'git ln'='git lo -n 10%'
+
+abbr 'git ls'='git ls-files'
 
 abbr 'git mg'='git merge --no-ff'
 abbr 'git mf'='git merge --ff-only'
