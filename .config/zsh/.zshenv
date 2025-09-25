@@ -40,6 +40,8 @@ export QUICKLISP_CACHE=$XDG_CACHE_HOME/quicklisp
 
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java -Djavafx.cachedir=$XDG_CACHE_HOME/openjfx"
 
+export EZA_COLORS="da=36"
+
 export LESS='-R --mouse'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_mb=$'\e[1;31mm'   # begin blinking
