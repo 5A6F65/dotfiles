@@ -30,7 +30,7 @@ function z() {
     }
 
     local -a dirs
-    dirs=($proj/*(/N))
+    dirs=($proj/*(/N,@))
     if [[ -z $dirs ]] {
         print "Error: projects directory '$proj' is empty." >&2
         return 1
