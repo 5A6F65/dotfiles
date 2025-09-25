@@ -123,7 +123,7 @@
   
   ### time: current time ###
   # Time color.
-  typeset -g POWERLEVEL9K_TIME_FOREGROUND=$black
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND=$grey
   # Time format. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
   # Time will update when hit enter.
