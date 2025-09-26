@@ -41,8 +41,8 @@
     context                   # user@hostname
     dir                       # current directory
     vcs                       # git status
-    command_execution_time    # previous command duration
     time                      # current time
+    command_execution_time    # previous command duration
     # =========================[ Line #2 ]=========================
     newline                   # new line
     prompt_char               # prompt symbol
@@ -111,7 +111,7 @@
   
   ### command_execution_time: previous command duration ###
   # Duration color.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$grey
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$blue
   # Duration format.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
   # Show duration if takes at least this many seconds.
