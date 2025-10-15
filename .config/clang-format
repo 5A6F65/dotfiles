@@ -2,6 +2,8 @@
 ---
 Language: Cpp
 
+ColumnLimit: 160
+
 # 访问说明符(public、private等)的偏移(缩进或者对齐)
 AccessModifierOffset: -4
 
@@ -12,28 +14,28 @@ AlignArrayOfStructures: None
 # 连续赋值时，对齐等号
 AlignConsecutiveAssignments:
   Enabled: true
-  AcrossEmptyLines: true # 跨越空白行进行对齐
-  AcrossComments: false  # 跨越注释行进行对齐
-  AlignCompound: true    # 对齐复合赋值
-  PadOperators: true     # 填充短赋值运算符
+  AcrossEmptyLines: false # 跨越空白行进行对齐
+  AcrossComments: false   # 跨越注释行进行对齐
+  AlignCompound: true     # 对齐复合赋值
+  PadOperators: true      # 填充短赋值运算符
 # 对齐结构体位段: None, Consecutive, AcrossEmptyLines, AcrossComments, AcrossEmptyLinesAndComments
-AlignConsecutiveBitFields: AcrossEmptyLines
+AlignConsecutiveBitFields: Consecutive
 # 对齐连续声明
 AlignConsecutiveDeclarations:
   Enabled: true
-  AcrossEmptyLines: false          # 跨越空白行进行对齐
-  AcrossComments: false            # 跨越注释行进行对齐
-  AlignFunctionDeclarations: false # 对齐函数声明
-  AlignFunctionPointers: false     # 对齐函数指针
+  AcrossEmptyLines: false         # 跨越空白行进行对齐
+  AcrossComments: false           # 跨越注释行进行对齐
+  AlignFunctionDeclarations: true # 对齐函数声明
+  AlignFunctionPointers: false    # 对齐函数指针
 # 对齐连续宏定义: None, Consecutive, AcrossEmptyLines, AcrossComments, AcrossEmptyLinesAndComments
 AlignConsecutiveMacros: Consecutive
 # 对齐连续短 case 标签
 AlignConsecutiveShortCaseStatements:
   Enabled: true
-  AcrossEmptyLines: true # 跨越空白行进行对齐
-  AcrossComments: false  # 跨越注释行进行对齐
-  AlignCaseArrows: true  # 对齐 case 箭头
-  AlignCaseColons: false # 对齐 case 冒号
+  AcrossEmptyLines: false # 跨越空白行进行对齐
+  AcrossComments: false   # 跨越注释行进行对齐
+  AlignCaseArrows: true   # 对齐 case 箭头
+  AlignCaseColons: false  # 对齐 case 冒号
 # 对齐转义换行符中的反斜杠: DontAlign, Left, LeftWithLastLine, Right
 AlignEscapedNewlines: Left
 # 竖直对齐二元和三元表达式操作数: DontAlign, Align, AlignAfterOperator
@@ -56,7 +58,7 @@ AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: All
 AllowShortLambdasOnASingleLine: All
 AllowShortIfStatementsOnASingleLine: AllIfsAndElse
-AllowShortLoopsOnASingleLine: true
+AllowShortLoopsOnASingleLine: false
 
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakAfterReturnType: None
@@ -96,7 +98,6 @@ BreakConstructorInitializersBeforeComma: false
 BreakConstructorInitializers: BeforeColon
 BreakAfterJavaFieldAnnotations: false
 BreakStringLiterals: true
-ColumnLimit:     160
 CommentPragmas:  '^ IWYU pragma:'
 QualifierAlignment: Leave
 CompactNamespaces: false
