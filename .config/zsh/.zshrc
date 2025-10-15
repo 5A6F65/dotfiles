@@ -27,5 +27,24 @@
     return 0
 }
 
+() {
+    local -a PROJ_DIRS=(
+        "/mnt/c/Users/7/DevEcoStudioProjects"
+        "/mnt/d/Project"
+    )
+    (( ${PROJ_DIRS[(Ie)${PWD:h}]} )) || return 0
+
+    local source_path real_path
+    for source_path ($HOME/project/*(N)) {
+        [[ -L $source_path ]] || continue
+        real_path=${source_path:A}
+        if [[ $real_path == $PWD ]]; then
+            cd $source_path
+            return 0
+        fi
+    }
+    return 0
+}
+
 # unsetopt XTRACE
 # exec 2>&3 3>&-
