@@ -38,6 +38,8 @@ export STACK_XDG=true
 export QUICKLISP_HOME=$XDG_DATA_HOME/quicklisp
 export QUICKLISP_CACHE=$XDG_CACHE_HOME/quicklisp
 
+export DOTNET_CLI_HOME=$XDG_DATA_HOME/dotnet
+
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java -Djavafx.cachedir=$XDG_CACHE_HOME/openjfx"
 
 export EZA_COLORS="da=36"
@@ -72,5 +74,7 @@ export GOPATH=$HOME/go
 path=($GOPATH/bin $path)
 
 path=({$XDG_DATA_HOME/{ghcup,cargo},$XDG_CONFIG_HOME/cabal}/bin $path)
+
+path=($HOME/.gem/bin $path)
 
 path=($XDG_BIN_HOME $path)

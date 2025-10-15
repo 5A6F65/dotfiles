@@ -17,7 +17,7 @@
         ${ZDOTDIR:-$HOME}/zinit/init.zsh
         ${ZDOTDIR:-$HOME}/custom/{bindkey,alias,lazy}.zsh
 
-        $XDG_DATA_HOME/{ghcup,cargo}/env
+        # $XDG_DATA_HOME/{ghcup,cargo}/env
     )
 
     for config_file ($config_files) {
