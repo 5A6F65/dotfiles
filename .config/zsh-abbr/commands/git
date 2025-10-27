@@ -29,8 +29,8 @@ abbr 'git co'='git checkout'
 
 abbr 'git cp'='git cherry-pick'
 
-abbr 'git df'='git diff%'
-abbr 'git ds'='git diff --staged%'
+abbr 'git df'='git diff'
+abbr 'git ds'='git diff --staged'
 abbr 'git dt'='git difftool%'
 
 abbr 'git fe'='git fetch'
