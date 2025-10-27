@@ -22,8 +22,8 @@ abbr 'yadm cl'='yadm clone'
 
 abbr 'yadm co'='yadm checkout'
 
-abbr 'yadm df'='yadm diff%'
-abbr 'yadm ds'='yadm diff --staged%'
+abbr 'yadm df'='yadm diff'
+abbr 'yadm ds'='yadm diff --staged'
 abbr 'yadm dt'='yadm difftool%'
 
 abbr 'yadm fe'='yadm fetch'
