@@ -18,6 +18,8 @@
         ${ZDOTDIR:-$HOME}/custom/{bindkey,alias,lazy}.zsh
 
         # $XDG_DATA_HOME/{ghcup,cargo}/env
+
+        /usr/share/doc/pkgfile/command-not-found.zsh
     )
 
     for config_file ($config_files) {
