@@ -5,7 +5,7 @@ ABBR_LOG_AVAILABLE_ABBREVIATION=1
 ABBR_LOG_AVAILABLE_ABBREVIATION_AFTER=1
 ABBR_AUTOLOAD=0
 
-() {
+_abbd_refresh_cache() {
     local abbr_cache_dir abbr_cache_file
     local abbr_config_dir abbr_config_file
     local -a abbr_config_files
@@ -33,3 +33,5 @@ ABBR_AUTOLOAD=0
     ABBR_USER_ABBREVIATIONS_FILE=$abbr_cache_file
     return 0
 }
+
+_abbd_refresh_cache
