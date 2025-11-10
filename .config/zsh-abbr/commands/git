@@ -80,6 +80,12 @@ abbr 'git ss'='git status -s -b%'
 
 abbr 'git sw'='git switch'
 abbr 'git sc'='git switch -c'
+abbr 'git switch m'='git switch main%'
+abbr 'git switch d'='git switch develop%'
+abbr 'git switch f'='git switch feature/%'
+abbr 'git switch h'='git switch hotfix/%'
+abbr 'git switch -c f'='git switch -c feature/%'
+abbr 'git switch -c h'='git switch -c hotfix/%'
 
 abbr 'git sa'='git stash'
 abbr 'git stash s'='git stash save -u "%"'
