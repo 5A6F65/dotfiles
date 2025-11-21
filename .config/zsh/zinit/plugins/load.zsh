@@ -1,7 +1,7 @@
 plugins=(
     # Make sure fzf-tab is the last plugin to bind "^I"
-    # (?) and before plugins which will wrap widgets
-    atinit='%external%; zicompinit; zicdreplay' atclone='%external%' Aloxaf/fzf-tab
+    # and before plugins which will wrap widgets
+    atinit='%external%' atclone='%external%' Aloxaf/fzf-tab
 
     atload='%external%' zdharma-continuum/fast-syntax-highlighting
     zdharma-continuum/history-search-multi-word
@@ -29,18 +29,13 @@ plugins=(
 
     # atinit='%external%' atload='_flush_ysu_buffer' MichaelAquilina/zsh-you-should-use
 
-    # blockf zdharma-continuum/zui
-    # atload='!__zbrowse_precmd' zdharma-continuum/zbrowse
-    # zdharma-continuum/zinit-console
-    # zdharma-continuum/zsh-cmd-architect
-    # zdharma-continuum/zsh-editing-workbench
+    # z-shell/zsh-cmd-architect
 )
-# ${${(M)=ZINIT[LOAD_OPTS]:#*wait=0a*}:+wait=0b}
 zinit ${=ZINIT[LOAD_OPTS]} for ${plugins[@]}
 
 # Lazy loading of zsh-nvm
 nvm() {
     unfunction nvm
-    zinit ${=ZINIT[LOAD_OPTS]/wait* lucid/} for lukechilds/zsh-nvm
+    zinit ${${=ZINIT[LOAD_OPTS]}:#(lucid|wait*)} for lukechilds/zsh-nvm
     nvm $@
 }

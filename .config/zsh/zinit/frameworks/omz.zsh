@@ -23,13 +23,12 @@
     return 0
 }
 
-zstyle :omz:plugins:ssh-agent quiet yes
-zstyle :omz:plugins:ssh-agent lazy yes
-
 zinit ${=ZINIT[LOAD_OPTS]} for \
     OMZL::{completion,key-bindings}.zsh \
     as='completion' OMZP::rust/_rustc \
-    OMZP::{sudo,ssh-agent}
-zinit ${=ZINIT[LOAD_OPTS]/nocd/} \
+    atinit='%external%' OMZP::ssh-agent \
+    OMZP::sudo
+
+zinit ${${=ZINIT[LOAD_OPTS]}:#nocd} \
     atclone='.zinit-fix-omz-plugin' atpull='%atclone' for \
         OMZP::{extract,colored-man-pages}
