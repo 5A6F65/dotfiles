@@ -34,7 +34,7 @@
     syntax-theme = Coldark-Cold
 
 [alias]
-    # log oneline/full/detailed
+    # log oneline/long/detailed
     lo = log --graph --all --decorate --pretty='format:%C(auto)%h %<(72,trunc)%s %C(brightcyan)%>>(14,trunc)%ar %C(brightgreen)%an%C(auto)% D%C(reset)'
-    lf = log --graph --all --decorate --stat --pretty='format:%C(auto)%H% D%C(reset)%nAuthor: %C(brightgreen)%an <%ae>%C(reset)%nDate:   %C(brightcyan)%ai (%ar)%C(reset)%nTitle:  %s%n%n%-b%n'
+    ll = log --graph --all --decorate --stat --pretty='format:%C(auto)%H% D%C(reset)%nAuthor: %C(brightgreen)%an <%ae>%C(reset)%nDate:   %C(brightcyan)%ai (%ar)%C(reset)%nTitle:  %s%n%n%-b%n'
     ld = log --stat --patch -1 --pretty='format:%C(auto)%H% D%C(reset)%nAuthor: %C(brightgreen)%an <%ae>%C(reset)%nDate:   %C(brightcyan)%ai (%ar)%C(reset)%nTitle:  %s%n%n%-b%n'
