@@ -3,7 +3,7 @@
     email = Zoe.Wick@outlook.com
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [core]
     pager = delta
