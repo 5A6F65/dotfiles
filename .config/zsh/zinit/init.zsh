@@ -3,21 +3,6 @@ ZINIT[HOME_DIR]=${XDG_DATA_HOME:-${HOME}/.local/share}/zinit
 ZINIT[BIN_DIR]=${ZINIT[HOME_DIR]}/zinit.git
 ZINIT[ZCOMPDUMP_PATH]=${ZSH_COMPDUMP:-${XDG_CACHE_HOME:-$HOME/.cache}/.zcompdump}
 ZINIT[NO_ALIASES]=1
-ZINIT[CLONE_DEPTH]=1
-
-# Optimize loading based on usage context
-if (( ${+functions[_p9k_instant_prompt_precmd_first]} )) || [[ $ZSH_EXECUTION_STRING == exit ]] {
-    # Fast mode: instant prompt enabled or only exiting
-    ZINIT[OPTIMIZE_OUT_DISK_ACCESSES]=1
-    ZINIT[COMPINIT_OPTS]='-C'
-    ZINIT[LOAD_OPTS]="depth=${ZINIT[CLONE_DEPTH]} wait lucid light-mode nocd"
-} else {
-    # Safe mode: slow down loading to prevent unexpected behavior
-    ZINIT[OPTIMIZE_OUT_DISK_ACCESSES]=0
-    ZINIT[COMPINIT_OPTS]=''
-    ZINIT[COMPINIT_OPTS]='-C'
-    ZINIT[LOAD_OPTS]="depth=${ZINIT[CLONE_DEPTH]}"
-}
 
 # Install zinit if not present
 if [[ ! -d ${ZINIT[BIN_DIR]} ]] {
@@ -32,10 +17,33 @@ source ${ZINIT[BIN_DIR]}/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+if (( ${+functions[_p9k_instant_prompt_precmd_first]} )) || [[ $ZSH_EXECUTION_STRING == exit ]] {
+    # Optimized mode: skip unnecessary disk accesses and omit new-function check
+    # when the instant prompt is active or executing only exit
+    ZINIT[OPTIMIZE_OUT_DISK_ACCESSES]=1
+    ZINIT[COMPINIT_OPTS]='-C'
+} else {
+    # Debug mode: disable light and turbo modes for clearer tracing
+    ZINIT[OPTIMIZE_OUT_DISK_ACCESSES]=0
+    functions -c zinit .zinit-original
+    zinit() {
+        .zinit-original ${${@:#(light-mode|wait*)}//(#s)light(#e)/load}
+    }
+}
+
+# Load zinit annexes
+zinit depth=1 nocd light-mode for \
+    zdharma-continuum/zinit-annex-default-ice \
+    _local/z-a-external-hook \
+    NICHOLAS85/z-a-eval
+zinit default-ice -q depth=1 nocd lucid
+
+# Load theme
+source ${ZDOTDIR:-$HOME}/themes/p10k.zsh
+zinit light-mode for romkatv/powerlevel10k
+
 # Wrap compinit
 zicompinit() {
-    (( ${+ZINIT[_ZICOMPINIT_DONE]} )) && return
-
     # Initialize completion system
     setopt extendedglob
     autoload -Uz compinit
@@ -50,19 +58,16 @@ zicompinit() {
 
     # Load specific command completions
     (( ${+commands[jj]} )) && source <(COMPLETE=zsh jj)
-
-    ZINIT[_ZICOMPINIT_DONE]=1
 }
 
 # Allow asynchronous initialization of the completion system
-zinit ${=ZINIT[LOAD_OPTS]} for \
+zinit wait light-mode for \
     atinit='zicompinit && zicdreplay' zdharma-continuum/null
 
-# Load zinit annexes
-zinit ${=ZINIT[LOAD_OPTS]} for \
-    _local/zinit-annex-external-hook
+# Load libraries
+zinit wait for OMZL::{completion,key-bindings}.zsh
 
-# Load configurations
-source ${ZDOTDIR:-$HOME}/zinit/themes/p10k.zsh
-source ${ZDOTDIR:-$HOME}/zinit/frameworks/omz.zsh
-source ${ZDOTDIR:-$HOME}/zinit/plugins/load.zsh
+# Load plugins
+source ${ZDOTDIR:-$HOME}/zinit/plugins/main.zsh
+source ${ZDOTDIR:-$HOME}/zinit/plugins/omz.zsh
+source ${ZDOTDIR:-$HOME}/zinit/plugins/lazy.zsh

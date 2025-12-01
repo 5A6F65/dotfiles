@@ -23,12 +23,10 @@
     return 0
 }
 
-zinit ${=ZINIT[LOAD_OPTS]} for \
-    OMZL::{completion,key-bindings}.zsh \
+zinit wait for \
     as='completion' OMZP::rust/_rustc \
-    atinit='%external%' OMZP::ssh-agent \
-    OMZP::sudo
+    OMZP::{ssh-agent,sudo}
 
-zinit ${${=ZINIT[LOAD_OPTS]}:#nocd} \
-    atclone='.zinit-fix-omz-plugin' atpull='%atclone' for \
-        OMZP::{extract,colored-man-pages}
+zinit wait atclone='.zinit-fix-omz-plugin' atpull='%atclone' for \
+    atload='unalias x' OMZP::extract \
+    OMZP::colored-man-pages
