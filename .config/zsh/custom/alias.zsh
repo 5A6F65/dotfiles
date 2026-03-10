@@ -20,9 +20,11 @@ alias genact='clear && genact'
 
 alias cman='man -M /usr/share/man/zh_CN'
 
-alias mvn="mvn -gs $XDG_CONFIG_HOME/maven/settings.xml"
-alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
-alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+alias mvn='mvn -gs $XDG_CONFIG_HOME/maven/settings.xml'
+
+alias svn='svn --config-dir $XDG_CONFIG_HOME/subversion'
+
+alias wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts'
 
 # The following aliases are designed for WSL
 if (( ${+WSL_DISTRO_NAME} )) {

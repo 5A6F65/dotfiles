@@ -16,8 +16,6 @@ export DOTNET_CLI_HOME=$XDG_DATA_HOME/dotnet
 
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 
-export GOPATH=$XDG_DATA_HOME/go
-
 export LESSHISTFILE=$XDG_STATE_HOME/lesshst
 
 export NODE_REPL_HISTORY=$XDG_STATE_HOME/node_repl_history
@@ -39,6 +37,10 @@ export QUICKLISP_HOME=$XDG_DATA_HOME/quicklisp
 export QUICKLISP_CACHE=$XDG_CACHE_HOME/quicklisp
 
 export DOTNET_CLI_HOME=$XDG_DATA_HOME/dotnet
+
+export AZURE_CONFIG_DIR=$XDG_DATA_HOME/azure
+
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java -Djavafx.cachedir=$XDG_CACHE_HOME/openjfx"
 
@@ -70,7 +72,7 @@ path=($JAVA_HOME/bin $path)
 export ANDROID_HOME=$HOME/android/sdk
 path=($ANDROID_HOME/cmdline-tools/latest/bin $ANDROID_HOME/platform-tools $path)
 
-export GOPATH=$HOME/go
+export GOPATH=$XDG_DATA_HOME/go
 path=($GOPATH/bin $path)
 
 path=({$XDG_DATA_HOME/{ghcup,cargo},$XDG_CONFIG_HOME/cabal}/bin $path)
