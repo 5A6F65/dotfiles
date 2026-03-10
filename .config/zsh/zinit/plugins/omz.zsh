@@ -28,5 +28,5 @@ zinit wait for \
     OMZP::{ssh-agent,sudo}
 
 zinit wait atclone='.zinit-fix-omz-plugin' atpull='%atclone' for \
-    atload='unalias x' OMZP::extract \
+    atload='unalias x && alias ext=extract' OMZP::extract \
     OMZP::colored-man-pages
