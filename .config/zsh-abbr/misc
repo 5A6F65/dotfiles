@@ -2,21 +2,21 @@ abbr 'c'='clear%'
 
 abbr 'pr'='print --'
 abbr 'pl'='print -l --'
-abbr 'pv'='print -l -- ${%}'
+abbr 'pv'='print -l -- $%'
 
 abbr 'md'='mkdir'
 abbr 'mp'='mkdir -p'
 
 abbr 'zi'='zinit'
-abbr 'zu'='zinit update -q%'
-abbr 'zinit up'='zinit update -q%'
-abbr 'zinit tm'='zinit times -a%'
+abbr 'zu'='zinit update -q'
+abbr 'zinit up'='zinit update -q'
+abbr 'zinit tm'='zinit times -md'
 abbr 'zinit rp'='zinit report'
 
-abbr 'ez'='exec zsh%'
+abbr 'ez'='exec zsh'
 
-abbr 'al'='abbr load%'
+abbr 'al'='abbr load'
 
 abbr 'hf'="hyperfine -w3 -r20 '%'"
 
-abbr 'cc'='clear && cat'
+abbr 'ur'='uv run'
