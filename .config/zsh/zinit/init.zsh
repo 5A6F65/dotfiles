@@ -70,4 +70,3 @@ zinit wait for OMZL::{completion,key-bindings}.zsh
 # Load plugins
 source ${ZDOTDIR:-$HOME}/zinit/plugins/main.zsh
 source ${ZDOTDIR:-$HOME}/zinit/plugins/omz.zsh
-source ${ZDOTDIR:-$HOME}/zinit/plugins/lazy.zsh

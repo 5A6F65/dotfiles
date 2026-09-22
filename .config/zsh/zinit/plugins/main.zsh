@@ -25,5 +25,7 @@ ziplugins=(
     # agkozak/zhooks
 
     # atload='_flush_ysu_buffer' MichaelAquilina/zsh-you-should-use
+
+    lukechilds/zsh-nvm
 )
 zinit wait light-mode for $ziplugins
