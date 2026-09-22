@@ -16,7 +16,7 @@ alias tree='eza --tree'
 
 alias fd='fdfind'
 
-alias genact='clear && genact'
+alias genact='clear && genact -m bootlog'
 
 alias cman='man -M /usr/share/man/zh_CN'
 
