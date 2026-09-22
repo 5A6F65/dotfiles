@@ -1,7 +1,3 @@
-[user]
-    name = Zoe
-    email = Zoe.Wick@outlook.com
-
 [init]
     defaultBranch = main
 
@@ -38,3 +34,5 @@
     lo = log --graph --all --decorate --pretty='format:%C(auto)%h %<(72,trunc)%s %C(brightcyan)%>>(14,trunc)%ar %C(brightgreen)%an%C(auto)% D%C(reset)'
     ll = log --graph --all --decorate --stat --pretty='format:%C(auto)%H% D%C(reset)%nAuthor: %C(brightgreen)%an <%ae>%C(reset)%nDate:   %C(brightcyan)%ai (%ar)%C(reset)%nTitle:  %s%n%n%-b%n'
     ld = log --stat --patch -1 --pretty='format:%C(auto)%H% D%C(reset)%nAuthor: %C(brightgreen)%an <%ae>%C(reset)%nDate:   %C(brightcyan)%ai (%ar)%C(reset)%nTitle:  %s%n%n%-b%n'
+[user]
+	useConfigOnly = true
