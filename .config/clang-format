@@ -13,7 +13,7 @@ AlignAfterOpenBracket:	Align
 AlignArrayOfStructures: None
 # 连续赋值时，对齐等号
 AlignConsecutiveAssignments:
-  Enabled: true
+  Enabled: false
   AcrossEmptyLines: false # 跨越空白行进行对齐
   AcrossComments: false   # 跨越注释行进行对齐
   AlignCompound: true     # 对齐复合赋值
@@ -22,7 +22,7 @@ AlignConsecutiveAssignments:
 AlignConsecutiveBitFields: Consecutive
 # 对齐连续声明
 AlignConsecutiveDeclarations:
-  Enabled: true
+  Enabled: false
   AcrossEmptyLines: false         # 跨越空白行进行对齐
   AcrossComments: false           # 跨越注释行进行对齐
   AlignFunctionDeclarations: true # 对齐函数声明
