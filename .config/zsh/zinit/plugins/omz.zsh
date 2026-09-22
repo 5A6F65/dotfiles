@@ -1,4 +1,6 @@
 .zinit-fix-omz-plugin() {
+    setopt local_options extended_glob
+
     [[ -d $dir/._zinit ]] || return 1
 
     local pluginid
@@ -11,8 +13,8 @@
 
     print "Fixing $dirname..."
     rm -rf $dir/ohmyzsh
-    git clone --quiet --no-checkout --depth=1 --filter=tree:0 \
-        https://github.com/ohmyzsh/ohmyzsh "$dir/ohmyzsh"
+    git clone --quiet --no-checkout --depth=1 --filter=blob:none \
+        https://github.com/ohmyzsh/ohmyzsh "$dir/ohmyzsh" || return
     git -C "$dir/ohmyzsh" sparse-checkout set --no-cone "plugins/$pluginid"
     git -C "$dir/ohmyzsh" checkout --quiet 2>/dev/null # --quiet doesn't seem to work here?
     for file ($dir/ohmyzsh/plugins/$pluginid/*~(.gitignore|*.plugin.zsh)(D)) {
