@@ -28,4 +28,4 @@ ziplugins=(
 
     lukechilds/zsh-nvm
 )
-zinit wait light-mode for $ziplugins
+zinit wait light-mode mhook for $ziplugins

@@ -34,7 +34,7 @@ if (( ${+functions[_p9k_instant_prompt_precmd_first]} )) || [[ $ZSH_EXECUTION_ST
 # Load zinit annexes
 zinit depth=1 nocd light-mode for \
     zdharma-continuum/zinit-annex-default-ice \
-    _local/z-a-external-hook \
+    5A6F65/zinit-annex-modular-hooks \
     NICHOLAS85/z-a-eval
 zinit default-ice -q depth=1 nocd lucid
 
