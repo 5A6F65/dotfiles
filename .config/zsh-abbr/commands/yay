@@ -14,7 +14,7 @@ abbr 'yay ls'='yay -Qe%'
 
 abbr 'yay fd'='pacman -Ss'
 
-abbr 'yay si'='pacman -Si'
+abbr 'yay if'='pacman -Si'
 
 # list orphans
 abbr 'yay lo'='yay -Qtd'

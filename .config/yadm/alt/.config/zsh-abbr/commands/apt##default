@@ -17,4 +17,4 @@ abbr 'apt ls'='apt list --installed%'
 
 abbr 'apt fd'='apt search'
 
-abbr 'apt si'='apt show'
+abbr 'apt if'='apt show'

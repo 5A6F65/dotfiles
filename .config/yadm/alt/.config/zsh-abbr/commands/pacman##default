@@ -14,7 +14,7 @@ abbr 'pacman lf'='pacman -Qf'
 
 abbr 'pacman fd'='pacman -Ss'
 
-abbr 'pacman si'='pacman -Si'
+abbr 'pacman if'='pacman -if'
 
 # list orphans
 abbr 'pacman lo'='pacman -Qdt'

@@ -11,4 +11,4 @@ abbr 'snap ls'='snap list --all%'
 
 abbr 'snap fd'='snap find'
 
-abbr 'snap si'='snap info'
+abbr 'snap if'='snap info'
