@@ -5,13 +5,21 @@ ziplugins=(
 
     # atload='zvm_init' jeffreytse/zsh-vi-mode
 
+    id-as='atuin' as='command' from='gh-r' \
+        bpick='atuin-*-musl.tar.gz~*/atuin-server-*.tar.gz' \
+        mv='atuin*/atuin -> atuin' \
+        eval='$dir/atuin init zsh --disable-up-arrow' \
+        atclone='$dir/atuin gen-completions --shell zsh > $dir/_atuin' \
+        atpull='%atclone' \
+        atuinsh/atuin
+
     # Make sure that zsh-abbr is before plugins which will wrap widgets
     # and before zsh-autosuggestions when set ZSH_AUTOSUGGEST_MANUAL_REBIND
     olets/zsh-abbr
     atload='_abbr_log_available_abbreviation'
         olets/zsh-autosuggestions-abbreviations-strategy
 
-    zdharma-continuum/history-search-multi-word
+    # zdharma-continuum/history-search-multi-word
     zdharma-continuum/fast-syntax-highlighting
     5A6F65/fast-abbr-highlighting
 
