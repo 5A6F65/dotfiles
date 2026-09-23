@@ -15,7 +15,7 @@ _abbr_refresh_cache() {
     abbr_cache_file=${ABBR_CACHE_FILE:-${XDG_CACHE_HOME:-$HOME/.cache}/zsh-abbr/current}
     [[ -d $abbr_config_dir ]] || return
     [[ -d ${abbr_cache_file:h} ]] || mkdir -p ${abbr_cache_file:h} || return
-    [[ ! -e $abbr_cache_file ]] || : >| $abbr_cache_file || return
+    [[ ! -e $abbr_cache_file ]] || : >| $abbr_cache_file 2>/dev/null || return
 
     abbr_config_files=()
     for abbr_config_file ($abbr_config_dir/commands/*(N)) {
