@@ -12,6 +12,9 @@ alias lza='lla -Z'
 alias lu='ll --total-size'
 alias lua='lla --total-size'
 
+alias lm='ll --sort=modified -r'
+alias lma='lla --sort=modified -r'
+
 alias tree='eza --tree'
 
 alias fd='fdfind'
