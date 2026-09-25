@@ -14,13 +14,9 @@
         ${ZDOTDIR:-$HOME}/custom/history.zsh
         ${ZDOTDIR:-$HOME}/zinit/init.zsh
         ${ZDOTDIR:-$HOME}/custom/{bindkey,alias,lazy}.zsh
-        # $XDG_DATA_HOME/{ghcup,cargo}/env
         /usr/share/doc/pkgfile/command-not-found.zsh
     )
-    for config_file ($config_files) {
-        [[ -f $config_file && -r $config_file ]] || continue
-        source $config_file
-    }
+    for config_file (${^config_files}(-.rN)) source $config_file
     return 0
 }
 
